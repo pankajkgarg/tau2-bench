@@ -122,6 +122,7 @@ def apply_all_tools_dense_pipeline_spec(
     variant.kb_search_dense.embedder_type = embedder_type
     variant.kb_search_dense.embedder_model = model
 
+
 # ---------------------------------------------------------------------------
 # Prompt template loading (moved from retrieval_config.py, unchanged)
 # ---------------------------------------------------------------------------
@@ -772,16 +773,10 @@ def build_tools(
         and variant.shell is not None
     )
     if has_all_tools:
-        bm25_pipeline = _create_kb_pipeline(
-            variant.kb_search_bm25, knowledge_base
-        )
-        dense_pipeline = _create_kb_pipeline(
-            variant.kb_search_dense, knowledge_base
-        )
+        bm25_pipeline = _create_kb_pipeline(variant.kb_search_bm25, knowledge_base)
+        dense_pipeline = _create_kb_pipeline(variant.kb_search_dense, knowledge_base)
         sandbox = _create_sandbox(knowledge_base, variant.shell)
-        return KnowledgeToolsAllTools(
-            db, bm25_pipeline, dense_pipeline, sandbox
-        )
+        return KnowledgeToolsAllTools(db, bm25_pipeline, dense_pipeline, sandbox)
 
     has_kb = variant.kb_search is not None
     has_grep = variant.grep is not None

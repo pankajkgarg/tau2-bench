@@ -635,9 +635,10 @@ def get_unique_embedder_configs_for_retrieval_configs(
                 map_dense_embedding_cli_to_pipeline,
             )
 
-            det = retrieval_config_kwargs.get(
-                "dense_embedding_type"
-            ) or DEFAULT_DENSE_EMBEDDING_TYPE
+            det = (
+                retrieval_config_kwargs.get("dense_embedding_type")
+                or DEFAULT_DENSE_EMBEDDING_TYPE
+            )
             dem = retrieval_config_kwargs.get("dense_embedding_model")
             embedder_type, model = map_dense_embedding_cli_to_pipeline(det, dem)
             config = (embedder_type, {"model": model})

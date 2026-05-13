@@ -498,7 +498,6 @@ class BaseRunConfig(BaseModel):
 
         return self
 
-
     @property
     def effective_agent(self) -> str:
         """The agent implementation name to use."""

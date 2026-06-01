@@ -2,6 +2,16 @@
 
 > Instructions for AI coding agents working on the τ-bench codebase.
 
+## Research papers
+Research papers files
+* `tau2_bench_research_paper.md`
+* `tau_voice_research_paper.md`
+* `saber_research_paper.md`
+
+## Eval scenarios
+For telecom in `data/tau2/domains/telecom/tasks_small.json`, similarly for other domains you can look into `data/tau2/domains/<name>/`
+
+
 ## Project Overview
 
 τ-bench is a simulation framework for evaluating conversational customer service agents. It supports text and voice interactions in half-duplex (turn-based) and full-duplex (simultaneous/streaming) communication modes. Domains include `mock`, `airline`, `retail`, `telecom`, and `banking_knowledge`.
